@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BrailConcursos.Infra.Data\BrasilConcursos.Infra.Data.csproj" />
+    <ProjectReference Include="..\BrasilConcursos.Application\BrasilConcursos.Application.csproj" />
+    <ProjectReference Include="..\BrasilConcursos.Domain\BrasilConcursos.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
