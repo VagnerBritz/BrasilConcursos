@@ -1,4 +1,5 @@
 ﻿using BrasilConcursos.Application.Interfaces;
+using BrasilConcursos.Application.Mappings;
 using BrasilConcursos.Application.Services;
 using BrasilConcursos.Domain.Interfaces;
 using BrasilConcursos.Infra.Data.Context;
@@ -20,7 +21,10 @@ namespace BrasilConcursos.Infra.IoC
                 options.LogTo(Console.WriteLine);
             });
             services.AddScoped<IConcourseRepository, ConcourseRepository>();
+            services.AddScoped<IPositionService, PositionService>();
+            services.AddScoped<IPositionRepository, PositionRepository>();
             services.AddScoped<IConcourseService, ConcourseService>();
+            services.AddAutoMapper(typeof(DomainToDtoProfile));
 
             return services;
         }

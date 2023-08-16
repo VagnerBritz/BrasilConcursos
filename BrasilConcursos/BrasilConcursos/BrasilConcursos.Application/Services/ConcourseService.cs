@@ -1,4 +1,6 @@
-﻿using BrasilConcursos.Application.Interfaces;
+﻿using AutoMapper;
+using BrasilConcursos.Application.DTOs;
+using BrasilConcursos.Application.Interfaces;
 using BrasilConcursos.Domain.Entities;
 using BrasilConcursos.Domain.Interfaces;
 
@@ -8,36 +10,42 @@ namespace BrasilConcursos.Application.Services
     {
 
         private readonly IConcourseRepository _concourseRepository;
-
-        public ConcourseService(IConcourseRepository concourseRepository)
+        private readonly IMapper _mapper;
+        public ConcourseService(IConcourseRepository concourseRepository, IMapper mapper)
         {
             _concourseRepository = concourseRepository;
+            _mapper = mapper;
         }
 
-        // posteriormente o retorno ser ConcourseDTO
-        public async Task<IEnumerable<Concourse>> GetAllAsync()
+        public async Task<IEnumerable<ConcourseDTO>> GetAllAsync()
         {
-            var concourses = await _concourseRepository.GetConcoursesAsync();
-            return concourses;
+            var concoursesList = await _concourseRepository.GetConcoursesAsync();
+            return _mapper.Map<IEnumerable<ConcourseDTO>>(concoursesList);
         }
-        public async Task<Concourse> GetByIdAsync(Guid id)
+        public async Task<ConcourseDTO> GetByIdAsync(Guid id)
         {
             var concourse =  await _concourseRepository.GetConcourseByIdAsync(id);
-            return concourse;
+            return _mapper.Map<ConcourseDTO>(concourse);
         }
-        public async Task<Concourse> AddAsync(Concourse newConcourse)
+        public async Task<ConcourseDTO> AddAsync(ConcourseDTO concourseDTO)
         {
-           var concourse = await _concourseRepository.CreateAsync(newConcourse);
-            return concourse;
+           var concourseEntity = _mapper.Map<Concourse>(concourseDTO);
+            concourseEntity.Id = Guid.NewGuid();            
+            var concourse = await _concourseRepository.CreateAsync(concourseEntity);
+            return _mapper.Map<ConcourseDTO>(concourse);            
         }
-        public async Task<Concourse> UpdateAsync(Concourse concourse)
+        public async Task UpdateAsync(ConcourseDTO concourseDTO)
         {
+            
+            var concourse = _mapper.Map<Concourse>(concourseDTO);
+            //concourse.UpdatedAt = DateTime.Now;
             await _concourseRepository.UpdateAsync(concourse);
-            return concourse;
+            
         }
         public async Task DeleteAsync(Guid id)
         {
             var concourse = await _concourseRepository.GetConcourseByIdAsync(id);
+            
             await _concourseRepository.DeleteAsync(concourse);            
         }
     }

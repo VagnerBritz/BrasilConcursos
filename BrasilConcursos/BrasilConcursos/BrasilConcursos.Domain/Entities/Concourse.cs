@@ -2,10 +2,10 @@
 {
     public sealed class Concourse
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; }
         public string PublicAgency { get; set; }
         public string ExaminationBoard { get; set; }
-        //public ICollection<Cargo> Cargos { get; set; } =new List<Cargo>();
+        public ICollection<Position> Positions { get; set; } = new List<Position>();
         public string NoticeUrl { get; set; }
         public DateTime RegistrationStartDate { get; set; }
         public DateTime RegistrationEndDate { get; set; }
@@ -16,11 +16,11 @@
         {
         }
 
-        public Concourse(string publicAgency, string examinationBoard, /*List<string> positions, */string noticeUrl, DateTime registrationStartDate, DateTime registrationEndDate)
+        public Concourse(string publicAgency, string examinationBoard, List<Position> positions, string noticeUrl, DateTime registrationStartDate, DateTime registrationEndDate)
         {
             PublicAgency = publicAgency;
             ExaminationBoard = examinationBoard;
-            //Positions = positions;
+            Positions = positions;
             NoticeUrl = noticeUrl;
             RegistrationStartDate = registrationStartDate;
             RegistrationEndDate = registrationEndDate;

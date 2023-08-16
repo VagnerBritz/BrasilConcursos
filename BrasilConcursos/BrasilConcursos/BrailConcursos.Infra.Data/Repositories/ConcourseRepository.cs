@@ -15,7 +15,9 @@ namespace BrasilConcursos.Infra.Data.Repositories
 
         public async Task<IEnumerable<Concourse>> GetConcoursesAsync()
         {
-            return await _context.Concourses.ToListAsync();
+            return await _context.Concourses
+                .Include("Positions")
+                .ToListAsync();
         }
 
         public async Task<Concourse> GetConcourseByIdAsync(Guid id)
@@ -35,7 +37,8 @@ namespace BrasilConcursos.Infra.Data.Repositories
 
         public async Task<Concourse> UpdateAsync(Concourse concourse)
         {
-            _context.Concourses.Update(concourse);
+            _context.ChangeTracker.Clear();
+            _context.Update(concourse);
             await _context.SaveChangesAsync();
             return concourse;
         }

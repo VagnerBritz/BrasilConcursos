@@ -1,14 +1,13 @@
-﻿using BrasilConcursos.Domain.Entities;
+﻿using BrasilConcursos.Application.DTOs;
 
 namespace BrasilConcursos.Application.Interfaces
 {
     public interface IConcourseService
     {
-        // posteriormente o retorno ser ConcourseDTO
-        Task<IEnumerable<Concourse>> GetAllAsync();
-        Task<Concourse> GetByIdAsync(Guid id);
-        Task<Concourse> AddAsync(Concourse concourse);
-        Task<Concourse> UpdateAsync(Concourse concourse);
+        Task<IEnumerable<ConcourseDTO>> GetAllAsync();
+        Task<ConcourseDTO> GetByIdAsync(Guid id);
+        Task<ConcourseDTO> AddAsync(ConcourseDTO concourse);
+        Task UpdateAsync(ConcourseDTO concourse);
         Task DeleteAsync(Guid id);
     }
 }
