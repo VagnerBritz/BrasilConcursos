@@ -7,15 +7,18 @@ namespace BrasilConcursos.Infra.Data.Context
     {
         public ApplicationDbContext() { }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
-        public DbSet<Concourse> concourses { get; set; }
+        public DbSet<Concourse> Concourses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Concourse>()
                 .Property(x => x.CreatedAt)
+                .ValueGeneratedOnAdd()
                 .HasDefaultValueSql("getdate()");
+
             modelBuilder.Entity<Concourse>()
                 .Property(x => x.UpdatedAt)
+                //.ValueGeneratedOnAddOrUpdate()
                 .HasDefaultValueSql("getdate()");
         }
     }

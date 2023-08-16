@@ -2,15 +2,15 @@
 {
     public sealed class Concourse
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string PublicAgency { get; set; }
         public string ExaminationBoard { get; set; }
-        //public List<string> Positions { get; set; } = new List<string>();
+        //public ICollection<Cargo> Cargos { get; set; } =new List<Cargo>();
         public string NoticeUrl { get; set; }
         public DateTime RegistrationStartDate { get; set; }
         public DateTime RegistrationEndDate { get; set; }
-        public DateTime? CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } //ao invés de usar herança usar interface
+        public DateTime UpdatedAt { get; set; }
 
         public Concourse()
         {

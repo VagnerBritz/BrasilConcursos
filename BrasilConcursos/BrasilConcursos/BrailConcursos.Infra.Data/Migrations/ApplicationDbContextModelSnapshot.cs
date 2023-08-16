@@ -24,13 +24,11 @@ namespace BrasilConcursos.Infra.Data.Migrations
 
             modelBuilder.Entity("BrasilConcursos.Domain.Entities.Concourse", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime?>("CreatedAt")
+                    b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("getdate()");
@@ -50,14 +48,14 @@ namespace BrasilConcursos.Infra.Data.Migrations
                     b.Property<DateTime>("RegistrationStartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("getdate()");
 
                     b.HasKey("Id");
 
-                    b.ToTable("concourses");
+                    b.ToTable("Concourses");
                 });
 #pragma warning restore 612, 618
         }

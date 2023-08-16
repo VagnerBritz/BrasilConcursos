@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="EntitiesConfiguration\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>
