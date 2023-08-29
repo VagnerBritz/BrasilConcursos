@@ -17,36 +17,35 @@ namespace BrasilConcursos.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ConcourseDTO>> GetAllAsync()
+        public async Task<IEnumerable<ConcourseDto>> GetAllAsync()
         {
             var concoursesList = await _concourseRepository.GetConcoursesAsync();
-            return _mapper.Map<IEnumerable<ConcourseDTO>>(concoursesList);
+            return _mapper.Map<IEnumerable<ConcourseDto>>(concoursesList);
         }
-        public async Task<ConcourseDTO> GetByIdAsync(Guid id)
+        public async Task<ConcourseDto> GetByIdAsync(Guid id)
         {
-            var concourse =  await _concourseRepository.GetConcourseByIdAsync(id);
-            return _mapper.Map<ConcourseDTO>(concourse);
+            var concourse = await _concourseRepository.GetConcourseByIdAsync(id);
+            return _mapper.Map<ConcourseDto>(concourse);
         }
-        public async Task<ConcourseDTO> AddAsync(ConcourseDTO concourseDTO)
+        public async Task<ConcourseDto> AddAsync(ConcourseDto concourseDTO)
         {
-           var concourseEntity = _mapper.Map<Concourse>(concourseDTO);
-            concourseEntity.Id = Guid.NewGuid();            
+            var concourseEntity = _mapper.Map<Concourse>(concourseDTO);
+            concourseEntity.Id = Guid.NewGuid();
             var concourse = await _concourseRepository.CreateAsync(concourseEntity);
-            return _mapper.Map<ConcourseDTO>(concourse);            
+            return _mapper.Map<ConcourseDto>(concourse);
         }
-        public async Task UpdateAsync(ConcourseDTO concourseDTO)
+        public async Task UpdateAsync(ConcourseDto concourseDTO)
         {
-            
+
             var concourse = _mapper.Map<Concourse>(concourseDTO);
-            //concourse.UpdatedAt = DateTime.Now;
             await _concourseRepository.UpdateAsync(concourse);
-            
+
         }
         public async Task DeleteAsync(Guid id)
         {
             var concourse = await _concourseRepository.GetConcourseByIdAsync(id);
-            
-            await _concourseRepository.DeleteAsync(concourse);            
+
+            await _concourseRepository.DeleteAsync(concourse);
         }
     }
 }

@@ -8,8 +8,8 @@ namespace BrasilConcursos.Application.Mappings
     {
         public DomainToDtoProfile()
         {
-            CreateMap<Concourse, ConcourseDTO>().ReverseMap();
-            CreateMap<Position, PositionDTO>().ReverseMap();
+            CreateMap<Concourse, ConcourseDto>().ReverseMap();
+            CreateMap<Position, PositionDto>().ReverseMap();
         }
     }
 }

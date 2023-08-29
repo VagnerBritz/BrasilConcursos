@@ -1,6 +1,6 @@
 ﻿namespace BrasilConcursos.Application.DTOs
 {
-    public class PositionDTO
+    public class PositionDto
     {
         public Guid Id { get; set; }
         public string JobName { get; set; }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BrasilConcursos.Application.DTOs
 {
-    public class ConcourseDTO
+    public class ConcourseDto
     {
         public Guid Id { get; set; }
         [Required(ErrorMessage = "The name is Required")]
@@ -16,11 +16,27 @@ namespace BrasilConcursos.Application.DTOs
         [Required(ErrorMessage = "The Url patch is Required")]
         public string NoticeUrl { get; set; }
 
-       [Required]
+        [Required]
         public DateTime RegistrationStartDate { get; set; }
-       [Required]
+        [Required]
 
         public DateTime RegistrationEndDate { get; set; }
         public ICollection<Position> Positions { get; set; }
+
+        //public ConcourseDto()
+        //{
+        //}
+
+        //public  ConcourseDto(Guid id, string publicAgency, string examinationBoard, string noticeUrl, DateTime registrationStartDate, DateTime registrationEndDate, ICollection<Position> positions)
+        //{
+        //    Id = id;
+        //    PublicAgency = publicAgency;
+        //    ExaminationBoard = examinationBoard;
+        //    NoticeUrl = noticeUrl;
+        //    RegistrationStartDate = registrationStartDate;
+        //    RegistrationEndDate = registrationEndDate;
+        //    Positions = positions;
+        //}
     }
+
 }

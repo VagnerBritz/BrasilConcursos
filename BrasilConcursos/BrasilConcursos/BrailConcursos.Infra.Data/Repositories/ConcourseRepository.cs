@@ -16,6 +16,7 @@ namespace BrasilConcursos.Infra.Data.Repositories
         public async Task<IEnumerable<Concourse>> GetConcoursesAsync()
         {
             return await _context.Concourses
+                .Where(x => x.RegistrationEndDate >= DateTime.Today)
                 .Include("Positions")
                 .ToListAsync();
         }
@@ -23,13 +24,15 @@ namespace BrasilConcursos.Infra.Data.Repositories
         public async Task<Concourse> GetConcourseByIdAsync(Guid id)
         {
 
-            var concourse = await _context.Concourses.FindAsync(id);
-
+            //var concourse = await _context.Concourses.FindAsync(id);
+            var concourse = await _context.Concourses
+                .Include("Positions")
+                .FirstOrDefaultAsync(x => x.Id == id); //pra voltar o null
             return concourse;
         }
 
         public async Task<Concourse> CreateAsync(Concourse concourse)
-        {            
+        {
             _context.Concourses.Add(concourse);
             await _context.SaveChangesAsync();
             return concourse;
@@ -37,10 +40,13 @@ namespace BrasilConcursos.Infra.Data.Repositories
 
         public async Task<Concourse> UpdateAsync(Concourse concourse)
         {
-            _context.ChangeTracker.Clear();
+            //_context.ChangeTracker.Clear();
+
             _context.Update(concourse);
+
             await _context.SaveChangesAsync();
-            return concourse;
+
+            return concourse; // tirar esse retorno a hora q refatorar
         }
 
         public async Task DeleteAsync(Concourse concourse)

@@ -1,8 +1,12 @@
-﻿namespace BrasilConcursos.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BrasilConcursos.Domain.Entities
 {
     public sealed class Concourse
     {
         public Guid Id { get; set; }
+        [Required]
+        [MinLength(3, ErrorMessage = "Mínimo de 3 letras")]
         public string PublicAgency { get; set; }
         public string ExaminationBoard { get; set; }
         public ICollection<Position> Positions { get; set; } = new List<Position>();

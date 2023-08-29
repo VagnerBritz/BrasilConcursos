@@ -28,5 +28,6 @@ namespace BrasilConcursos.Infra.IoC
 
             return services;
         }
+
     }
 }

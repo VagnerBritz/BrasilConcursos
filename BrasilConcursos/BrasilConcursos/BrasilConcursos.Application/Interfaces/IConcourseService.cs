@@ -4,10 +4,10 @@ namespace BrasilConcursos.Application.Interfaces
 {
     public interface IConcourseService
     {
-        Task<IEnumerable<ConcourseDTO>> GetAllAsync();
-        Task<ConcourseDTO> GetByIdAsync(Guid id);
-        Task<ConcourseDTO> AddAsync(ConcourseDTO concourse);
-        Task UpdateAsync(ConcourseDTO concourse);
+        Task<IEnumerable<ConcourseDto>> GetAllAsync();
+        Task<ConcourseDto> GetByIdAsync(Guid id);
+        Task<ConcourseDto> AddAsync(ConcourseDto concourse);
+        Task UpdateAsync(ConcourseDto concourse);
         Task DeleteAsync(Guid id);
     }
 }

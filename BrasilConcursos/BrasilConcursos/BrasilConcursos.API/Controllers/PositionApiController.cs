@@ -6,19 +6,19 @@ namespace BrasilConcursos.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PositionController : Controller
+    public class PositionApiController : Controller
     {
         private readonly IPositionService _service;
-        public PositionController(IPositionService service)
+        public PositionApiController(IPositionService service)
         {
             _service = service;
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(PositionDTO positionDTO)
+        public async Task<ActionResult> Create(PositionDto positionDto)
         {
-            await _service.AddAsync(positionDTO);
-            return StatusCode(201, positionDTO);
+            await _service.AddAsync(positionDto);
+            return StatusCode(201, positionDto);
         }
     }
 }

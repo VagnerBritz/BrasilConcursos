@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BrasilConcursos.Domain\BrasilConcursos.Domain.csproj" />
+    <ProjectReference Include="..\BrasilConcursos.Application\BrasilConcursos.Application.csproj" />
   </ItemGroup>
 
 </Project>

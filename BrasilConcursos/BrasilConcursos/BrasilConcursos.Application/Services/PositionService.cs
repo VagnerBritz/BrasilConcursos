@@ -16,11 +16,11 @@ namespace BrasilConcursos.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<PositionDTO> AddAsync(PositionDTO positionDTO)
+        public async Task<PositionDto> AddAsync(PositionDto positionDto)
         {
-            var position = _mapper.Map<Position>(positionDTO);
+            var position = _mapper.Map<Position>(positionDto);
             await _repository.CreateAsync(position);
-            return positionDTO; // isso tá errado. Arrumar depois
+            return positionDto; // isso tá errado. Arrumar depois
         }
 
         public Task DeleteAsync(Guid id)
@@ -28,17 +28,17 @@ namespace BrasilConcursos.Application.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<PositionDTO>> GetAllAsync()
+        public Task<IEnumerable<PositionDto>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<PositionDTO> GetByIdAsync(Guid id)
+        public Task<PositionDto> GetByIdAsync(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateAsync(PositionDTO positionDTO)
+        public Task UpdateAsync(PositionDto positionDto)
         {
             throw new NotImplementedException();
         }

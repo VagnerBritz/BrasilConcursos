@@ -5,15 +5,17 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilConcursos.Domain", "BrasilConcursos.Domain\BrasilConcursos.Domain.csproj", "{D71EBF45-985A-41EA-A6DC-B9818E1DE9FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilConcursos.Domain.Tests", "BrasilConcursos.Domain.Tests\BrasilConcursos.Domain.Tests.csproj", "{A9495E8C-5ED2-40DE-B966-DD518FEA0472}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilConcursos.Infra.Data", "BrailConcursos.Infra.Data\BrasilConcursos.Infra.Data.csproj", "{BB22B6BB-58B8-4546-A7D0-C8CD3845069C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilConcursos.Infra.IoC", "BrasilConcursos.Infra.IoC\BrasilConcursos.Infra.IoC.csproj", "{07F440A4-9253-4C87-87CD-77FA425C1C98}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilConcursos.Application", "BrasilConcursos.Application\BrasilConcursos.Application.csproj", "{D0C70B40-6FFC-4046-9A99-3735BCFF3189}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrasilConcursos.API", "BrasilConcursos.API\BrasilConcursos.API.csproj", "{279B53B7-E12C-4435-B526-6900E6FE4AE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilConcursos.API", "BrasilConcursos.API\BrasilConcursos.API.csproj", "{279B53B7-E12C-4435-B526-6900E6FE4AE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrasilConcursos.Application.Tests", "BrasilConcursos.Application.Tests\BrasilConcursos.Application.Tests.csproj", "{3130BFDA-10C2-4A68-BFB7-9F334E757965}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrasilConcursos.Domain.Tests", "BrasilConcursos.Domain.Tests\BrasilConcursos.Domain.Tests.csproj", "{6CBAF0C6-9526-4A0E-8451-1A8BDD05895A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +27,6 @@ Global
 		{D71EBF45-985A-41EA-A6DC-B9818E1DE9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D71EBF45-985A-41EA-A6DC-B9818E1DE9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D71EBF45-985A-41EA-A6DC-B9818E1DE9FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9495E8C-5ED2-40DE-B966-DD518FEA0472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9495E8C-5ED2-40DE-B966-DD518FEA0472}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9495E8C-5ED2-40DE-B966-DD518FEA0472}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9495E8C-5ED2-40DE-B966-DD518FEA0472}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB22B6BB-58B8-4546-A7D0-C8CD3845069C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB22B6BB-58B8-4546-A7D0-C8CD3845069C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB22B6BB-58B8-4546-A7D0-C8CD3845069C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +43,14 @@ Global
 		{279B53B7-E12C-4435-B526-6900E6FE4AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{279B53B7-E12C-4435-B526-6900E6FE4AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{279B53B7-E12C-4435-B526-6900E6FE4AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3130BFDA-10C2-4A68-BFB7-9F334E757965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3130BFDA-10C2-4A68-BFB7-9F334E757965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3130BFDA-10C2-4A68-BFB7-9F334E757965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3130BFDA-10C2-4A68-BFB7-9F334E757965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CBAF0C6-9526-4A0E-8451-1A8BDD05895A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CBAF0C6-9526-4A0E-8451-1A8BDD05895A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CBAF0C6-9526-4A0E-8451-1A8BDD05895A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CBAF0C6-9526-4A0E-8451-1A8BDD05895A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

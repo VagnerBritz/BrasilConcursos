@@ -4,10 +4,10 @@ namespace BrasilConcursos.Application.Interfaces
 {
     public interface IPositionService
     {
-        Task<IEnumerable<PositionDTO>> GetAllAsync();
-        Task<PositionDTO> GetByIdAsync(Guid id);
-        Task<PositionDTO> AddAsync(PositionDTO positionDTO);
-        Task UpdateAsync(PositionDTO positionDTO);
+        Task<IEnumerable<PositionDto>> GetAllAsync();
+        Task<PositionDto> GetByIdAsync(Guid id);
+        Task<PositionDto> AddAsync(PositionDto positionDto);
+        Task UpdateAsync(PositionDto positionDto);
         Task DeleteAsync(Guid id);
     }
 }
